@@ -1,0 +1,23 @@
+{
+    "name": "phpbb-validation"
+  , "version": "0.1.0"
+  , "scripts": {
+        "start": "node phpbb.js"
+    }
+  , "dependencies": {
+        "requirejs": "2.x"
+      , "express": "3.x"
+      , "jade": ""
+      , "underscore": "1.4.3"
+      , "flatiron": "0.3.5"
+      , "mysql": "2.x"
+      , "squel": "1.x"
+      , "request": "2.x"
+      , "phpbb-password": "0.x"
+      , "password-generator": "0.x"
+      , "progress": "0.1.0"
+    }
+  , "engines": {
+        "node": "0.8.x"
+    }
+}

@@ -1,0 +1,119 @@
+!!! 5
+html(lang='es')
+head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title= title
+    link(rel='stylesheet', type='text/css', href='http://twitter.github.io/bootstrap/assets/css/bootstrap.css')
+    link(rel='stylesheet', type='text/css', href='css/style.css')
+  body
+    .container.wrap
+      .title.lead
+        h2.muted Registro
+        a.muted(href='http://foros.filos.unam.mx') foros.filos.unam.mx
+      
+      block content
+
+      #signup_students.modal.hide.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+        .modal-header
+          button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+          h3#myModalLabel.form-signup-heading Registro de estudiantes
+        .modal-body
+          form.form-horizontal.form-signup(action='/login', method='post')
+            .control-group
+              label.control-label(for='ref') Número de cuenta:
+              .controls
+                .input-prepend
+                  span.add-on
+                    i.icon-user
+                  input(type='text', name='ref', placeholder='Número de cuenta')
+            .control-group
+              label.control-label(for='username') Nombre de usuario:
+              .controls
+                .input-prepend
+                  span.add-on
+                    i.icon-user
+                  input#username(type='text', name='username', placeholder='Nombre de usuario')
+            .control-group
+              label.control-label(for='email') Correo electrónico:
+              .controls
+                .input-prepend
+                  span.add-on
+                    i.icon-envelope
+                  input#email(type='text', name='email', placeholder='Correo electrónico')
+            .control-group
+              label.control-label(for='email2') Repetir correo:
+              .controls
+                .input-prepend
+                  span.add-on
+                    i.icon-envelope
+                  input#email2(type='text', name='email2', placeholder='Repetir correo electrónico')
+            .control-group
+              label.control-label(for='password') Contraseña:
+              .controls
+                .input-prepend
+                  span.add-on
+                    i.icon-exclamation-sign
+                  input#password(type='password', name='password', placeholder='Contraseña')
+            .control-group
+              label.control-label(for='password2') Repetir contraseña:
+              .controls
+                .input-prepend
+                  span.add-on
+                    i.icon-exclamation-sign
+                  input#password2(type='password', name='password2', placeholder='Repetir contraseña')
+            .control-group
+              .controls
+                button.btn.btn-large.btn-primary(type='submit') Registrarse
+
+
+      #signup_faculty.modal.hide.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+        .modal-header
+          button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+          h3#myModalLabel.form-signup-heading Registro de profesores
+        .modal-body
+          form.form-horizontal.form-signup(action='/login', method='post')
+            .control-group
+              label.control-label(for='ref') RFC:
+              .controls
+                .input-prepend
+                  span.add-on
+                    i.icon-user
+                  input(type='text', name='ref', placeholder='RFC')
+            .control-group
+              label.control-label(for='username') Nombre de usuario:
+              .controls
+                .input-prepend
+                  span.add-on
+                    i.icon-user
+                  input#username(type='text', name='username', placeholder='Nombre de usuario')
+            .control-group
+              label.control-label(for='email') Correo electrónico:
+              .controls
+                .input-prepend
+                  span.add-on
+                    i.icon-envelope
+                  input#email(type='text', name='email', placeholder='Correo electrónico')
+            .control-group
+              label.control-label(for='password') Contraseña:
+              .controls
+                .input-prepend
+                  span.add-on
+                    i.icon-exclamation-sign
+                  input#password(type='password', name='password', placeholder='Contraseña')
+            .control-group
+              label.control-label(for='password2') Repetir contraseña:
+              .controls
+                .input-prepend
+                  span.add-on
+                    i.icon-exclamation-sign
+                  input#password2(type='password', name='password2', placeholder='Repetir contraseña')
+            .control-group
+              .controls
+                button.btn.btn-large.btn-primary(type='submit') Registrarse
+
+    script(src='http://code.jquery.com/jquery.min.js')
+    script(src='http://twitter.github.io/bootstrap/assets/js/bootstrap-transition.js')
+    script(src='http://twitter.github.io/bootstrap/assets/js/bootstrap-modal.js')
+    script(src='http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/jquery.validate.min.js')
+    script(src='js/application.js')
