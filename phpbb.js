@@ -87,6 +87,7 @@ requirejs([
       if( true === app.argv.s && app.argv.c ) {
 
         var sync = function(err, res, docs){
+          if(err) throw err;
 
           // parse json
           docs = JSON.parse(docs);
