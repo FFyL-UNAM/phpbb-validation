@@ -1,8 +1,8 @@
 # PHPBB3 External Validation
 
 For create user groups before or synchronize users
-	
-		node phpbb create -g 'FILOSOFIA (ESC)'
+  
+    node phpbb create -g 'FILOSOFIA (ESC)'
 
 For synchronize users (by college)
 
