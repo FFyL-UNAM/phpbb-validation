@@ -12,5 +12,4 @@ For synchronize users (by college)
 
 * Synchronize users (faculty)
 * Synchronize all users (both faculty and students)
-* Create forum groups by college
 * Register from HTTP Server

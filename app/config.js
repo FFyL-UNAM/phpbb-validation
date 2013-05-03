@@ -16,6 +16,8 @@ define( function() {
         , table : {
               users       : 'phpbb_users'
             , fields_data : 'phpbb_profile_fields_data'
+            , groups      : 'phpbb_groups'
+            , user_groups : 'phpbb_user_group'
           }
       }
     , json: {
@@ -36,6 +38,8 @@ define( function() {
         , table : {
               users       : 'phpbb_users'
             , fields_data : 'phpbb_profile_fields_data'
+            , groups      : 'phpbb_groups'
+            , user_groups : 'phpbb_user_group'
           }
       }
     , json: {
