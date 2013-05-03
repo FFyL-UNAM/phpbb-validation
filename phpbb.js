@@ -84,7 +84,7 @@ requirejs([
         , table = config.mysql.table;
 
       // sync students
-      if( true === app.argv.s && app.argv.c ) {
+      if( true === app.argv.s && app.argv.c && app.argv.g ) {
 
         var sync = function(err, res, docs){
           if(err) throw err;
@@ -161,7 +161,7 @@ requirejs([
 
                               sql = squel.select()
                                           .from(table.groups)
-                                          .where('group_name = "' + item.colegio + '"')
+                                          .where('group_name = "' + app.argv.g + '"')
                                           .toString();
 
                               connection.query(sql, function(err, result){
