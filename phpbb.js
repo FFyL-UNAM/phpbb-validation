@@ -294,7 +294,7 @@ requirejs([
                     .toString();
 
         connection.query(sql, function(err, result){
-          if(result.length > 0) {
+          if(result[0]) {
             console.log('Ya existe el grupo de usuario ' + app.argv.g);
             connection.end();
           } else {
