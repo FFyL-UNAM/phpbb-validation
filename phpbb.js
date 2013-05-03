@@ -81,8 +81,8 @@ requirejs([
       console.log('Server listening on port ' + config.server.port);
     });
 
-    // $ node phpbb users -s -c 'GEOGRAFIA (ESC)'
-    app.cmd('users', function(){
+    // $ node phpbb sync -s -c 'GEOGRAFIA (ESC)'
+    app.cmd('sync', function(){
 
       var sql
         , table = config.mysql.table;

@@ -22,13 +22,13 @@ For create user groups before synchronize users
 
 For synchronize users (students by college)
 
-    node phpbb users -s -c 'FILOSOFIA (ESC)' -g 'FILOSOFIA (ESC)'
+    node phpbb sync -s -c 'FILOSOFIA (ESC)' -g 'FILOSOFIA (ESC)'
 
 The college could be or not the group. In the example above is the same.
 
-For synchronize users (faculty by college)
+For synchronize sync (faculty by college)
 
-    node phpbb users -f -c 'FILOSOFIA' -d 'DIV EST SUA' -g 'FILOSOFIA (SUA)'
+    node phpbb sync -f -c 'FILOSOFIA' -d 'DIV EST SUA' -g 'FILOSOFIA (SUA)'
 
 ###ToDo
 
