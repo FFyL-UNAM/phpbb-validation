@@ -1,6 +1,6 @@
 # PHPBB3 External Validation
 
-For create user groups before or synchronize users
+For create user groups before synchronize users
   
     node phpbb create -g 'FILOSOFIA (ESC)'
 
