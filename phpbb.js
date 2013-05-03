@@ -84,7 +84,7 @@ requirejs([
         , table = config.mysql.table;
 
       // sync students
-      if( true === app.argv.s || true === app.argv.c ) {
+      if( true === app.argv.s && app.argv.c ) {
 
         var sync = function(err, res, docs){
 
@@ -92,9 +92,7 @@ requirejs([
           docs = JSON.parse(docs);
 
           // students per college
-          if(app.argv.c) {
-            docs = _.where(docs, { colegio: app.argv.c });
-          }
+          docs = _.where(docs, { colegio: app.argv.c });
 
           // remove duplicate students (♥_underscore_♥)
           docs = _.uniq(docs, function(item){
