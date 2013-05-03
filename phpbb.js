@@ -294,7 +294,10 @@ requirejs([
                     .toString();
 
         connection.query(sql, function(err, result){
-          if(result.length === 0) {
+          if(result.length > 0) {
+            console.log('Ya existe el grupo de usuario ' + app.argv.g);
+            connection.end();
+          } else {
             sql = squel.insert()
                         .into(table.groups)
                         .set('group_name', app.argv.g)
@@ -312,9 +315,6 @@ requirejs([
 
             }).on('end', function(){ connection.end(); });
 
-          } else {
-            console.log('Ya existe el grupo de usuario ' + app.argv.g);
-            connection.end();
           }
         });
 
