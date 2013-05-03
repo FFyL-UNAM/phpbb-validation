@@ -1,6 +1,6 @@
 # PHPBB3 External Validation
 
-Customize user synchronization for PHPBB depending on current students and current faculty of the Facultad de Filosofía y Letras, UNAM
+Customized user synchronization for PHPBB depending on current students and faculty of the Facultad de Filosofía y Letras, UNAM. 
 
 # Install
 
