@@ -294,7 +294,7 @@ requirejs([
                     .toString();
 
         connection.query(sql, function(err, result){
-          if(result[0]) {
+          if(typeof result === 'object' && result.length > 0) {
             console.log('Ya existe el grupo de usuario ' + app.argv.g);
             connection.end();
           } else {
@@ -308,13 +308,12 @@ requirejs([
 
               if(err) {
                 console.log('Ha ocurrido un error al crear el grupo');
-                return
+                return;
               }
               
               console.log('Se ha creado el grupo de usuario correctamente');
 
             }).on('end', function(){ connection.end(); });
-
           }
         });
 
