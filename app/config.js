@@ -43,7 +43,7 @@ define( function() {
           }
       }
     , json: {
-          students  : 'http://servicios.galileo.filos.unam.mx/foros'
+          students  : 'http://foros.filos.unam.mx/students.json'
         , faculty   : ''
       }
   };
