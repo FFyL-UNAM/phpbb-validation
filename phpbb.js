@@ -356,25 +356,52 @@ requirejs([
                   // select each professor for insert or validate user type
                   sql = squel.select()
                               .from(table.fields_data, 'f')
-                              .join(table.users, 'u', "f.user_id = u.user_id")
-                              .where('f.pf_rfc = "' + user.rfc + '"')
+                              .right_join(table.users, 'u', "f.user_id = u.user_id")
+                              .where('u.username = "' + user.username + '"')
                               .toString();
 
                   connection.query(sql, function(err, result){
 
                     if(result.length > 0) {
-                      // change user type to normal (user_type = 0)
-                      connection.query(
-                                  squel.update()
-                                        .table(table.fields_data, 'f')
-                                        .table(table.users, 'u')
-                                        .set('u.user_type', 0)
-                                        .where(squel.expr()
-                                                    .and('f.pf_rfc = "' + user.rfc + '"')
-                                                    .and('u.user_type = 1')
-                                                    .and('f.user_id = u.user_id'))
+
+                      var user_id = result[0].user_id;
+
+                      sql = squel.update()
+                                  .table(table.fields_data, 'f')
+                                  .table(table.users, 'u')
+                                  .set('u.user_type', 0)
+                                  .where(squel.expr()
+                                              .and('f.user_id = u.user_id')
+                                              .and('u.user_id = "' + user_id + '"'));
+
+                      // if already is student
+                      if(result[0].pf_cuenta) {
+                        sql.set('f.pf_rfc', user.rfc);
+
+                        connection.query(
+                            squel.select()
+                                  .from(table.groups)
+                                  .where('group_name = "Profesores"')
+                                  .toString()
+                          , function(err, result){
+
+                              if(result.length > 0) {
+                                connection.query(
+                                  squel.insert()
+                                        .into(table.user_groups)
+                                        .set('group_id', result[0].group_id)
+                                        .set('user_id', user_id)
                                         .toString()
-                                )
+                                );
+                              }
+
+                            }
+                        );
+
+                      }
+
+                      // change user type to normal (user_type = 0)
+                      connection.query(sql.toString())
                                 .on('end', function(){
                                   bar.tick();
   
