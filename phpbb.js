@@ -208,12 +208,32 @@ requirejs([
 
                                                           connection.query(sql)
                                                                     .on('end', function(){
-                                                                      bar.tick();
-                                      
-                                                                      if (bar.complete) {
-                                                                        connection.end();
-                                                                        console.log("\n  Finalizado.");
-                                                                      }
+
+                                                                      sql = squel.select()
+                                                                                  .from(table.groups)
+                                                                                  .where('group_name = "Estudiantes"')
+                                                                                  .toString();
+
+                                                                      connection.query(sql, function(err, result){
+                                                                        if (result.length > 0) {
+                                                                          sql = squel.insert()
+                                                                                      .into(table.user_groups)
+                                                                                      .set('group_id', result[0].group_id)
+                                                                                      .set('user_id', saved.insertId)
+                                                                                      .toString();
+
+                                                                          connection.query(sql)
+                                                                                    .on('end', function(){
+                                                                                      bar.tick();
+                                                      
+                                                                                      if (bar.complete) {
+                                                                                        connection.end();
+                                                                                        console.log("\n  Finalizado.");
+                                                                                      }
+                                                                                    });
+                                                                        }
+                                                                      });
+
                                                                     });
                                                         });
                                             });
