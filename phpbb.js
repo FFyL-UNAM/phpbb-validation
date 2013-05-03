@@ -80,7 +80,7 @@ requirejs([
         , table = config.mysql.table;
 
       // sync students
-      if( true === app.argv.s || true === app.argv.a ) {
+      if( true === app.argv.s || true === app.argv.c ) {
 
         var sync = function(err, res, docs){
 
