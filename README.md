@@ -10,6 +10,7 @@ For synchronize users (by college)
 
 ###ToDo
 
-* Synchronize users (faculty)
+* Synchronize users (faculty by college)
 * Synchronize all users (both faculty and students)
+* Mass mailing of password and by each one
 * Register from HTTP Server
