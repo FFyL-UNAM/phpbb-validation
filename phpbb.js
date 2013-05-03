@@ -166,7 +166,7 @@ requirejs([
 
                               connection.query(sql, function(err, result){
 
-                                if(result.length > 0) {
+                                if(result.length > 0 && user.username) {
 
                                   var group_id = result[0].group_id;
 
