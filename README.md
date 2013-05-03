@@ -1,5 +1,15 @@
 # PHPBB3 External Validation
 
+Customize user synchronization for PHPBB depending on current students and current faculty of the Facultad de Filosofía y Letras, UNAM
+
+# Install
+
+For install all dependencies
+
+    npm install
+
+# Usage
+
 For create user groups before synchronize users
   
     node phpbb create -g 'FILOSOFIA (ESC)'
