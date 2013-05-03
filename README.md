@@ -18,6 +18,8 @@ For synchronize users (by college)
 
     node phpbb users -s -c 'FILOSOFIA (ESC)'
 
+The college is just the group
+
 ###ToDo
 
 * Synchronize users (faculty by college)
