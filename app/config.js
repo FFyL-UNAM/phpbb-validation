@@ -22,7 +22,7 @@ define( function() {
       }
     , json: {
           students  : 'http://foros.local/students.json'
-        , faculty   : ''
+        , faculty   : 'http://foros.local/faculty.json'
       }
   };
 
@@ -44,7 +44,7 @@ define( function() {
       }
     , json: {
           students  : 'http://servicios.galileo.filos.unam.mx/foros'
-        , faculty   : ''
+        , faculty   : 'https://proyectos.filos.unam.mx/foro'
       }
   };
 
